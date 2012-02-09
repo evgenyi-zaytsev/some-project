@@ -1,0 +1,11 @@
+<div class="jewel-item">
+  <img src="<%= jewel.img_url %>">
+  <h3><%= jewel.title %></h3>
+  <p><%= jewel.description %></p>
+  <span class="price">$<%= jewel.price ||= "0.0" %></span>
+  <div class="buttons">
+    <button>View</button>
+    <button>Design option</button>
+  </div>
+  <div class="clearfix"></div>
+</div>

@@ -1,0 +1,41 @@
+<table class="account-manager" border="1" cellspacing="1" cellpadding="3">
+  <tr>
+    <th class="first">Customer Name</th>
+    <th class="other">Colection List<br><small>(items to be sent to buyer)</small></th>
+    <th class="other">Items with Comments<br><small>(items buyer waiting for reply)</small></th>
+    <th class="other">Product List<br><small>(items buyer final OK)</small></th>
+  </tr>
+  
+    <% @users.each do |user| if user.jewels.any? %>
+        <tr>
+          <td>
+            <center><img src="<%= user.picture %>" alt="" /></center>
+            <div class="info">
+              <div class="username"><%= user.username %></div>
+              <div class="email"><%= mail_to user.email %></div>
+              <div class="id">ID: <%= user.id %></div>
+              <div class="date">Last login: <%= user.current_sign_in_at ||= 'never logged in' %></div>
+              <div class="items at all"><%= user.jewels.count %> items where sent to user</div>
+            </div>
+          </td>
+          
+          <td>
+            <div class="scrollable">
+            <% user.jewels.where(:status => 0).each do |jewel| %>
+              <%= render 'shared/item', { :jewel => jewel } %>
+            <% end %>
+            </div>
+          </td>
+          
+          <td>
+            
+          </td>
+          
+          <td>
+            
+          </td>
+          
+        </tr>
+    <% end end %>
+  
+</table>

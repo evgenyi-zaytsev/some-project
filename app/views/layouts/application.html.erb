@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delmar</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="header">
+      <img src="/images/logo.jpg" alt="" />
+      <div class="user-controls">
+      <% if !current_user.nil? %>
+        Welcome, <%= current_user.username %><br>
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete %><br>
+        <%= Time.now.strftime("%I:%M%p") %>
+      <% end %>
+      </div>
+    </div>
+      
+    <%= yield %>
+      
+  </body>
+</html>
