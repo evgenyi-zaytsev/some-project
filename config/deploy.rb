@@ -14,7 +14,7 @@ set :rvm_ruby_string, '1.9.2@delmar-demo'
 set :rvm_type, :user
 
 set :scm, :git
-set :repository,  "git@github.com/tamtamchik/some-project.git"
+set :repository,  "git://github.com/tamtamchik/some-project.git"
 set :branch, "master" # git branch can be changed.
 set :deploy_via, :remote_cache
 
