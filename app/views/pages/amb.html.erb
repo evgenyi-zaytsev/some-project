@@ -20,19 +20,33 @@
           </td>
           
           <td>
-            <div class="scrollable">
-            <% user.jewels.where(:status => 0).each do |jewel| %>
-              <%= render 'shared/item', { :jewel => jewel } %>
+            <% available = user.jewels.select{ |j| j.status == 0 || j.status == 1 } %>
+            <% if available.any? %>
+              <div class="scrollable">
+              <% available.each do |jewel| %>
+                <%= render 'shared/item', { :jewel => jewel } %>
+              <% end %>
+              </div>
+              <button onclick="javascript:sentToBuyerBtnClick(this, '<%= user.id.to_s %>')">Send to buyer</button>
             <% end %>
+          </td>
+          
+          <td>
+            <div class="scrollable">
+              <% user.jewels.where(:status => 2).each do |jewel| %>
+                <%= render 'shared/item', { :jewel => jewel } %>
+              <% end %>
             </div>
-          </td>
-          
-          <td>
             
           </td>
           
           <td>
-            
+            <div class="scrollable">
+              <% user.jewels.where(:status => 3).each do |jewel| %>
+                <%= render 'shared/item', { :jewel => jewel } %>
+                <%= render 'shared/item_buttons', { :jewel => jewel } %>
+              <% end %>
+            </div>
           </td>
           
         </tr>

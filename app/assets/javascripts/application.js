@@ -11,6 +11,51 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+function sentToBuyerBtnClick(btn, user_id){
+    console.log(btn, user_id);
+    if (user_id == null){
+        return false;
+    }
+
+    $.post(
+        'send_to_buyer/' + user_id
+    )
+        .complete(function() {
+            alert("Jewels have been sent"); 
+        });
+    
+}
+
+function submit_by_buyer(btn, user_id){
+    console.log(btn, user_id);
+    if (user_id == null){
+        return false;
+    }
+    
+    var selectedJewels = [];
+    
+    console.log($('.approved-jewel input'));
+    
+    var url = 'submit_by_buyer/' + user_id,
+        params = { 'jewels[]': selectedJewels };
+    
+    $.post(
+        url, params
+    )
+        .complete(function() {
+            alert("Jewels are submitted"); 
+        });
+}
+
+$(document).ready(function(){
+//    $( ".jewel-item").draggable({
+//	revert: "invalid", // when not dropped, the item will revert back to its initial position
+//	helper: "clone",
+//	cursor: "move"
+//    });
+});

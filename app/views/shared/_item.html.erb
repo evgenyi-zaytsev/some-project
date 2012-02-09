@@ -1,9 +1,10 @@
 <div class="jewel-item">
+  <input type="hidden" name="jewel_id" value="<%= jewel.id %>"/>
   <img src="<%= jewel.img_url %>">
   <h3><%= jewel.title %></h3>
   <p><%= jewel.description %></p>
   <span class="price">$<%= jewel.price ||= "0.0" %></span>
-  <div class="buttons">
+  <div class="buttons <%= btn_style ||= '' %>">
     <button>View</button>
     <button>Design option</button>
   </div>

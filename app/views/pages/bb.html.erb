@@ -1,0 +1,25 @@
+<table class="account-manager" border="1" cellspacing="1" cellpadding="3">
+  <tr>
+    <th class="other">Available List<br><!--<small>(items to be sent to buyer)</small>--></th>
+    <th class="other">Accepted List<br><!--<small>(items buyer waiting for reply)</small>--></th>
+  </tr>
+
+  <tr>
+    <td>
+      <div class="scrollable avail-jewel">
+        <% @user.jewels.where(:status => 1).each do |jewel| %>
+          <%= render 'shared/item', { :jewel => jewel, :btn_style => 'visible' } %>
+        <% end %>
+      </div>
+    </td>
+    <td>
+      <div class="scrollable approved-jewel">
+        <% @user.jewels.where(:status => 2).each do |jewel| %>
+          <%= render 'shared/item', { :jewel => jewel } %>
+        <% end %>
+      </div>
+    </td>
+</table>
+<div style="float:right">
+  <button onclick="submit_by_buyer(this, '<%= @user.id %>')">Done</button>
+</div>

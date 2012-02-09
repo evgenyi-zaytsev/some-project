@@ -9,6 +9,9 @@ Delmar::Application.routes.draw do
 
   root :to => "pages#amb"
   
+  match 'send_to_buyer/:id' => 'pages#send_to_buyer'
+  match 'submit_by_buyer/:id' => 'pages#submit_by_buyer '
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
