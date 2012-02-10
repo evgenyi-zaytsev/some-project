@@ -2,7 +2,7 @@
 <% color = (comment.user.is_admin == true) ? "aqua" : "graphite" %>
 <div class="comment">     
   <p class="time">
-    <%= comment.created_at %> by 
+    <%= comment.created_at.strftime('%b %e, %Y %I:%M %p') %> by
     <%= current_user == comment.user ? "Me" : comment.user.username ||= "anonymus" %>
   </p>
   <div class="comment <%= user %> bubble">
