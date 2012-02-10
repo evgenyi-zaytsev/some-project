@@ -52,10 +52,8 @@ function submit_by_buyer(btn, user_id){
         });
 }
 
-$(document).ready(function(){
-//    $( ".jewel-item").draggable({
-//	revert: "invalid", // when not dropped, the item will revert back to its initial position
-//	helper: "clone",
-//	cursor: "move"
-//    });
+$(function() {
+    $( ".avail-jewel, .approved-jewel" ).sortable({
+        connectWith: ".connectedSortable"
+    }).disableSelection();
 });
