@@ -1,4 +1,4 @@
-<table class="account-manager buyer-manager" border="1" cellspacing="1" cellpadding="3">
+<table class="account-manager" border="1" cellspacing="1" cellpadding="3">
   <tr>
     <th class="other">Available List<br><!--<small>(items to be sent to buyer)</small>--></th>
     <th class="other">Accepted List<br><!--<small>(items buyer waiting for reply)</small>--></th>
@@ -8,18 +8,26 @@
     <td>
       <div class="scrollable avail-jewel connectedSortable">
         <% @user.jewels.where(:status => 1).each do |jewel| %>
-          <%= render 'shared/item', { :jewel => jewel, :btn_style => 'visible' } %>
+          <%= render 'shared/item', { :jewel => jewel, :user => @user, :btn_style => 'visible' } %>
         <% end %>
       </div>
     </td>
     <td>
       <div class="scrollable approved-jewel connectedSortable">
         <% @user.jewels.where(:status => 2).each do |jewel| %>
-          <%= render 'shared/item', { :jewel => jewel } %>
+            <%= render 'shared/item', { :jewel => jewel, :user => @user } %>
+        <% end %>
+        <% @user.jewels.where(:status => 3).each do |jewel| %>
+          <div class="cart-item">
+            <%= render 'shared/item', { :jewel => jewel, :user => @user } %>
+          </div>
         <% end %>
       </div>
     </td>
 </table>
 <div style="float:right">
   <button onclick="submit_by_buyer(this, '<%= @user.id %>')">Done</button>
+  <% if @user.jewels.where(:status => 2).any? %>
+  <button onclick="showCart(this, '<%= @user.id %>')">Cart</button>
+  <% end %>
 </div>

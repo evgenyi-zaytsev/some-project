@@ -19,34 +19,38 @@
             </div>
           </td>
           
-          <td>
-            <% available = user.jewels.select{ |j| j.status == 0 || j.status == 1 } %>
-            <% if available.any? %>
+          <td class="collection-list">
+            <% available_list = user.jewels.select{ |j| j.status == 0 || j.status == 1 } %>
+            <% if available_list.any? %>
               <div class="scrollable">
-              <% available.each do |jewel| %>
-                <%= render 'shared/item', { :jewel => jewel } %>
+              <% available_list.each do |jewel| %>
+                <%= render 'shared/item', { :jewel => jewel, :user => user } %>
               <% end %>
               </div>
               <button onclick="javascript:sentToBuyerBtnClick(this, '<%= user.id.to_s %>')">Send to buyer</button>
             <% end %>
           </td>
           
-          <td>
-            <div class="scrollable">
-              <% user.jewels.where(:status => 2).each do |jewel| %>
-                <%= render 'shared/item', { :jewel => jewel } %>
-              <% end %>
-            </div>
-            
+          <td class="commented-list">
+            <% commenyed_list = user.jewels.select{ |j| j.status == 2 } %>
+            <% if commenyed_list.any? %>
+              <div class="scrollable">
+                <% commenyed_list.each do |jewel| %>
+                  <%= render 'shared/item', { :jewel => jewel, :user => user } %>
+                <% end %>
+              </div>
+            <% end %>
           </td>
           
-          <td>
-            <div class="scrollable">
-              <% user.jewels.where(:status => 3).each do |jewel| %>
-                <%= render 'shared/item', { :jewel => jewel } %>
-                <%= render 'shared/item_buttons', { :jewel => jewel } %>
-              <% end %>
-            </div>
+          <td class="production-list">
+            <% final_list = user.jewels.select{ |j| j.status == 3 } %>
+            <% if final_list.any? %>
+              <div class="scrollable">
+                <% final_list.each do |jewel| %>
+                  <%= render 'shared/item', { :jewel => jewel, :user => user } %>
+                <% end %>
+              </div>
+            <% end %>
           </td>
           
         </tr>

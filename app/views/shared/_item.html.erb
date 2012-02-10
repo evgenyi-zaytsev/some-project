@@ -4,9 +4,12 @@
   <h3><%= jewel.title %></h3>
   <p><%= jewel.description %></p>
   <span class="price">$<%= jewel.price ||= "0.0" %></span>
+  <input type="checkbox" name="approved_indicator" checked="checked" class="approve-indicator"/>
   <div class="buttons <%= btn_style ||= '' %>">
     <button>View</button>
     <button>Design option</button>
   </div>
+  <div class="clearfix"></div>
+  <%= render 'shared/jewel_comments', { :jewel => jewel, :user => user } %>
   <div class="clearfix"></div>
 </div>
