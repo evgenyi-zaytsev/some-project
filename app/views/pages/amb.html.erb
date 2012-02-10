@@ -27,7 +27,7 @@
                 <%= render 'shared/item', { :jewel => jewel, :user => user } %>
               <% end %>
               </div>
-              <button onclick="javascript:sentToBuyerBtnClick(this, '<%= user.id.to_s %>')">Send to buyer</button>
+              <button class="btn-primary" onclick="javascript:sentToBuyerBtnClick(this, '<%= user.id.to_s %>')">Send to buyer</button>
             <% end %>
           </td>
           
