@@ -26,8 +26,8 @@
     </td>
 </table>
 <div style="float:right">
-  <button onclick="submit_by_buyer(this, '<%= @user.id %>')">Done</button>
+  <button  class="btn-primary"  onclick="submit_by_buyer(this, '<%= @user.id %>')">Done</button>
   <% if @user.jewels.where(:status => 2).any? %>
-  <button onclick="showCart(this, '<%= @user.id %>')">Cart</button>
+  <button  class="btn-primary"  onclick="showCart(this, '<%= @user.id %>')">Cart</button>
   <% end %>
 </div>
