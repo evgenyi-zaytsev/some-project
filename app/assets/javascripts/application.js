@@ -26,7 +26,7 @@ function sentToBuyerBtnClick(btn, user_id){
         'send_to_buyer/' + user_id
     )
         .complete(function() {
-            alert("Jewels have been sent"); 
+            alert("Jewels have been sent");
         });
     
 }
@@ -37,18 +37,19 @@ function submit_by_buyer(btn, user_id){
         return false;
     }
     
-    var selectedJewels = [];
-    
-    console.log($('.approved-jewel input'));
+    var selJewels = $('.approved-jewel input');
+    var selJewelIds = $.map( selJewels, function(val, i) {
+        return val.getAttribute("value");
+    });
     
     var url = 'submit_by_buyer/' + user_id,
-        params = { 'jewels[]': selectedJewels };
-    
+        params = { 'jewels[]': selJewelIds };
+        
     $.post(
         url, params
     )
         .complete(function() {
-            alert("Jewels are submitted"); 
+            alert("Jewels are submitted");
         });
 }
 

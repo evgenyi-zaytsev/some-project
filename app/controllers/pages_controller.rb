@@ -31,11 +31,18 @@ class PagesController < ApplicationController
   
   def submit_by_buyer
     user = User.find(params['id'])
-    jewels = user.jewels.select{ |j| j['status'] == 1 }
     
-    jewels.each do |j|
-      j.status = 2
-      j.save()
+    if (user.nil?)
+      render :json => { :success => false }
+      return
+    end
+    
+    jewel_ids = params['jewels']
+    user_jewels = user.jewels.select{ |j| j['status'] ==1 && jewel_ids.include?(j['id'].to_s) }
+    
+    user_jewels.each do |jewel|
+      jewel.status = 3
+      jewel.save
     end
     
     render :json => { :success => true }
