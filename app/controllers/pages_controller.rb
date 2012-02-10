@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   end
   
   def amb
+    if !current_user.is_admin
+      redirect_to :action => 'bb'
+    end
     @users = User.all
   end
   
