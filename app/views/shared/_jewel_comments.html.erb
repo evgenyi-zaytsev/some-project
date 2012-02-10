@@ -1,0 +1,13 @@
+<div class="comments-container">
+  <div class="scrollable">
+    <div class="jewel-comments-list jewel-comments-list-<%= user.id %>-<%= jewel.id %> chat">
+      <% jewel.comments.each do |comment| %>
+        <%= render 'shared/item_comment', { :comment => comment } %>
+      <% end %>
+    </div>
+  </div>
+  <div class="new-comment new-comment-<%= user.id %>-<%= jewel.id %>">
+    <input name="new_comment" type="text">
+    <button onclick="send_comment(this, <%= user.id %>, <%= jewel.id %>)">Send</button>
+  </div>
+</div>

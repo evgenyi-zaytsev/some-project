@@ -1,0 +1,114 @@
+/**** CHAT ****/	
+		.chat div.bubble {
+			margin: 10px 10px 0 0px;
+			width: 80%;
+			clear: both;
+		}
+		
+		
+		
+		.chat div.right {
+			float: right;
+			}
+			
+		.chat div.left {
+			float: left;
+			}
+			
+			
+			.chat div.right p {
+				border-width: 10px 20px 12px 10px;
+			}
+			
+			.chat div.left p {
+				border-width: 10px 10px 12px 20px;
+			}
+			
+			/* lefties */
+			
+			.chat div.left p.lime {
+				-webkit-border-image: url(../images/chat_bubbles_lime_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.lemon {
+				-webkit-border-image: url(../images/chat_bubbles_lemon_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.orange {
+				-webkit-border-image: url(../images/chat_bubbles_orange_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.aqua {
+				-webkit-border-image: url(../images/chat_bubbles_aqua_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.purple {
+				-webkit-border-image: url(../images/chat_bubbles_purple_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.pink {
+				-webkit-border-image: url(../images/chat_bubbles_pink_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.graphite {
+				-webkit-border-image: url(../images/chat_bubbles_graphite_l.png) 10 10 13 19;
+				}
+				
+			.chat div.left p.clear {
+				-webkit-border-image: url(../images/chat_bubbles_clear_l.png) 10 10 13 19;
+				}
+				
+				
+				
+				
+			/*rights*/	
+			
+			.chat div.right p.aqua {
+				-webkit-border-image: url(../images/chat_bubbles_aqua_r.png) 10 19 13 10;
+				}
+				
+			.chat div.right p.lemon {
+				-webkit-border-image: url(../images/chat_bubbles_lemon_r.png) 10 19 13 10;
+				}
+				
+			.chat div.right p.lime {
+				-webkit-border-image: url(../images/chat_bubbles_lime_r.png) 10 19 13 10;
+				}
+				
+			.chat div.right p.purple {
+				-webkit-border-image: url(../images/chat_bubbles_purple_r.png) 10 19 13 10;
+				}
+				
+			.chat div.right p.pink {
+				-webkit-border-image: url(../images/chat_bubbles_pink_r.png) 10 19 13 10;
+				}
+				
+			.chat div.right p.graphite {
+				-webkit-border-image: url(../images/chat_bubbles_graphite_r.png) 10 19 13 10;
+				}
+				
+			.chat div.right p.clear {
+				-webkit-border-image: url(../images/chat_bubbles_clear_r.png) 10 19 13 10;
+				}
+				
+				
+				
+				
+				
+			
+		
+		.chat div.bubble p {
+			color: #000;
+			font-size: 16px;
+			margin: 0;
+		}
+		
+			.chat div.bubble + p {
+				color: #666;
+				text-align: center;
+				font-size: 12px;
+				font-weight: bold;
+				margin: 0;
+				padding: 10px 0 0 0;
+				clear: both;
+			}

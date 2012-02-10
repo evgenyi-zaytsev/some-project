@@ -1,0 +1,12 @@
+<% user = (comment.user.is_admin == true) ? "right" : "left" %>
+<% color = (comment.user.is_admin == true) ? "aqua" : "graphite" %>
+<div class="comment">     
+  <p class="time">
+    <%= time_ago_in_words(comment.created_at) %> ago by 
+    <%= current_user == comment.user ? "Me" : comment.user.username ||= "anonymus" %>
+  </p>
+  <div class="comment <%= user %> bubble">
+    <p class="<%= color %>"><%= comment.comment.to_s %></p>
+  </div>
+</div>
+<div class="clearfix"></div>
