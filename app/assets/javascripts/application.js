@@ -75,10 +75,10 @@ function send_comment(btn, user_id, jewel_id){
     if (user_id == null || jewel_id == null){
         return false;
     }
-
+    
     var url = 'send_comment/' + jewel_id,
-    textField = $('.new-comment-' + user_id + '-' +  jewel_id + ' input')[0],
-    comment = $(textField).val();
+    textField = $(btn).prev('input'),
+    comment = textField.val();
     
     $(textField).val('');
 

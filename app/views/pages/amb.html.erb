@@ -20,7 +20,7 @@
           </td>
           
           <td class="collection-list">
-            <% available_list = user.jewels.select{ |j| j.status == 0 || j.status == 1 } %>
+            <% available_list = user.jewels.select{ |j| j.status >= 0 } %>
             <% if available_list.any? %>
               <div class="scrollable">
               <% available_list.each do |jewel| %>
