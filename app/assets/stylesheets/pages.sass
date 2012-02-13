@@ -23,6 +23,7 @@
         :background #fff
         :vertical-align top
         :position relative
+        :overflow visible !important
         
         div.scrollable
             :max-height 250px !important
@@ -43,7 +44,10 @@
             
         .date
             :color #718c3f
-    
+            
+    .approve-indicator
+        :display none
+        
     .jewel-item
         :-webkit-user-select none
         :-khtml-user-select none
@@ -100,5 +104,19 @@
 .buyer-manager
     th
         :width 50% !important
-    .connectedSortable
-        :min-height 107px
+    .cart-item
+        :display none
+
+    .production-list, .collection-list
+        .comments-container
+            :display none
+
+    .new-comment
+        input
+            :margin-top 8px
+
+    .approve-indicator
+        :display none
+            
+        &.approved-jewel
+            :display block
