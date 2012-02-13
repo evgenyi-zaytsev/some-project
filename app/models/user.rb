@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_paper_trail
   
   has_many :jewels
   
