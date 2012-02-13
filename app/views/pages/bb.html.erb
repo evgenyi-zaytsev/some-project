@@ -7,9 +7,8 @@
   <tr>
     <td>
       <div class="scrollable avail-jewel connectedSortable">
-        <% @item_cls = '' %>
-        <% @user.jewels.where(:status => [1]).each do |jewel| %>
-          <%= render 'shared/item', { :jewel => jewel, :user => @user, :btn_style => 'visible' } %>
+        <% @user.jewels.where(:status => 1).each do |jewel| %>
+          <%= render 'shared/item', { :jewel => jewel, :user => @user } %>
         <% end %>
         <% @item_cls = 'commented-jewel' %>
         <% @user.jewels.where(:status => [2]).each do |jewel| %>

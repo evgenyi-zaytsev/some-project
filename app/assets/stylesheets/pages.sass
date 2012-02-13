@@ -47,6 +47,7 @@
             
     .approve-indicator
         :display none
+        :float left
         
     .jewel-item
         :-webkit-user-select none
@@ -61,29 +62,35 @@
         background-image: -webkit-linear-gradient(bottom, #F0F0F0 5%, #F9F9F9 51%, #FEFEFE 77%)
         background-image: -ms-linear-gradient(bottom, #F0F0F0 5%, #F9F9F9 51%, #FEFEFE 77%)
         
-        img
-            :width 90px
-            :height 90px
-            :margin 0 0.5em 0.5em 0
-            :margin-right 1em
+        .img-cnt
             :float left
-    
-        h3
-            :font-size 14px
-            :margin 0 0.5em 0.2em
-            :font-family "Times New Roman"
-            :line-height 1.1em
+            :border 1px solid #dadadc
+            :margin 0 0.5em 0.5em 0
+
+            img
+                :width 90px
+                :height 90px
+                
         
-        p, 
-            :font-size 11px
-            :line-height 1.1em
-            :margin-bottom 0.5em
-            
-        .price
-            :font-weight bold
-            :color #000
-            
+        .info-cnt
+
+            h3
+                :font-size 14px
+                :margin 0 0.5em 0.2em
+                :font-family "Times New Roman"
+                :line-height 1.1em
+
+            p, 
+                :font-size 11px
+                :line-height 1.1em
+                :margin-bottom 0.5em
+
+            .price
+                :font-weight bold
+                :color #000
+
         .buttons
+            :float right
             :display none
 
             &.visible
@@ -100,6 +107,13 @@
         .right-column
             .buttons
                 :float left
+                
+    .comment
+        :display none
+
+    .production-list, .collection-list
+        .comments-container
+            :display none
 
 .buyer-manager
     th
@@ -125,8 +139,14 @@
     .approve-indicator
         :display none
             
-        &.approved-jewel
+    .approved-jewel
+        .approve-indicator
             :display block
+
+    .approved-jewel, .avail-jewel
+        .buttons
+            :display block
+
 
     .commented-jewel.jewel-item
         :background #f0f5df
@@ -157,3 +177,4 @@
 
 .approved-jewel
     :background url("/images/bg_drop_here.png") no-repeat center 0
+
