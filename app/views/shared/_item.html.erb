@@ -1,15 +1,21 @@
 <div class="jewel-item">
-  <input type="hidden" name="jewel_id" value="<%= jewel.id %>"/>
-  <img src="<%= jewel.img_url %>">
-  <h3><%= jewel.title %></h3>
-  <p><%= jewel.description %></p>
-  <span class="price">$<%= jewel.price ||= "0.0" %></span>
-  <input type="checkbox" name="approved_indicator" checked="checked" class="approve-indicator"/>
-  <div class="buttons <%= btn_style ||= '' %>">
-    <button class="btn-primary">View</button>
-    <button class="btn-primary">Design option</button>
+    <div class="img-cnt">
+        <img src="<%= jewel.img_url %>">
+    </div>
+    <div class="info-cnt">
+        <input type="hidden" name="jewel_id" value="<%= jewel.id %>"/>
+        <h3><%= jewel.title %></h3>
+        <p><%= jewel.description %></p>
+        <span class="price">$<%= jewel.price ||= "0.0" %></span>
+    </div>
+  <div>
+    <input type="checkbox" name="approved_indicator" checked="checked" class="approve-indicator"/>
+    <div class="buttons">
+      <button class="btn-primary">More Comments</button>
+      <button class="btn-primary">Details</button>
+    </div>
   </div>
-  <div class="clearfix"></div>
-  <%= render 'shared/jewel_comments', { :jewel => jewel, :user => user } %>
-  <div class="clearfix"></div>
+    <div class="clearfix"></div>
+    <%= render 'shared/jewel_comments', { :jewel => jewel, :user => user } %>
+    <div class="clearfix"></div>
 </div>

@@ -11,7 +11,7 @@
       <img src="/images/logo.jpg" alt="" />
       <div class="user-controls">
       <% if !current_user.nil? %>
-        Welcome, <%= current_user.username %><br>
+        Welcome, <%= current_user.username ||="Anonymus" %><br>
         <%= link_to "Logout", destroy_user_session_path, :method => :delete %><br>
         <%= Time.now.strftime("%I:%M%p") %>
       <% end %>
