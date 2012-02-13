@@ -11,7 +11,7 @@ gem 'devise'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'acts_as_commentable'
 gem 'twitter-bootstrap-rails'
-gem 'paper_trail'
+#gem 'paper_trail'
 
 # Gems used only for assets and not required
 # in production environments by default.

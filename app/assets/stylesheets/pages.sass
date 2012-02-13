@@ -104,8 +104,15 @@
 .buyer-manager
     th
         :width 50% !important
+
     .cart-item
         :display none
+
+        .comments-container
+            :display none
+
+        .jewel-item
+            :background #f0f0f0
 
     .production-list, .collection-list
         .comments-container
@@ -120,3 +127,11 @@
             
         &.approved-jewel
             :display block
+
+    .commented-jewel.jewel-item
+        :background #f0f5df
+
+
+.achtung.notification-msg
+    :background #55ffaa
+    :color #000
