@@ -144,6 +144,7 @@ $(function() {
     $( ".avail-jewel, .approved-jewel" ).sortable({
         connectWith: ".connectedSortable"
     }).disableSelection();
+    $( ".avail-jewel, .approved-jewel" ).draggable();
     
     var comment_lists = $('.jewel-comments-list');
     $(comment_lists).each(function(index, list) {
