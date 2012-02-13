@@ -64,7 +64,7 @@ class PagesController < ApplicationController
     
     new_comment_params = {
       :comment => params['comment'],
-      :user_id => params['user_id']
+      :user_id => current_user.id
     }
     
     comment = jewel.comments.create!(new_comment_params)
