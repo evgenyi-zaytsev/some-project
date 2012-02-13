@@ -90,11 +90,12 @@ function send_comment(btn, user_id, jewel_id){
     $.post( url, params )
     .success(function(data) {
         if (data.success){
-            var container = $('.jewel-comments-list-' + user_id + '-' +  jewel_id)[0];
+            var jewel = $(btn).parents('.jewel-item'), 
+                container = $(jewel).find('.jewel-comments-list')[0];
             $(container).append(data.data);
             $(container).find('.comment').last().show();
 
-            var checkbox = $(btn).parents('.jewel-item').find("[type=checkbox]");
+            var checkbox = $(jewel).find("[type=checkbox]");
             $(checkbox).removeAttr("checked");
         } else { 
             alert( data.msg || "Server return some error");
