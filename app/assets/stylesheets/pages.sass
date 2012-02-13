@@ -118,14 +118,24 @@
 .buyer-manager
     th
         :width 50% !important
+
     .cart-item
         :display none
 
-    .new-comment
-        input
-            :margin-top 8px
+        .comments-container
+            :display none
 
-    
+        .jewel-item
+            :background #f0f0f0
+
+    .production-list, .collection-list
+        .comments-container
+            :display none
+        > button.btn-primary
+            :position absolute
+            :bottom 3px
+            :left 3px !important
+
     .approve-indicator
         :display none
             
@@ -136,3 +146,35 @@
     .approved-jewel, .avail-jewel
         .buttons
             :display block
+
+
+    .commented-jewel.jewel-item
+        :background #f0f5df
+
+
+.achtung.notification-msg
+    :background #55ffaa
+    :color #000
+    
+.new-comment
+    input
+        :margin-top 8px
+    .btn-primary
+        :margin-top -1px !important
+
+.collection-list
+    > button.btn-primary
+        :position absolute
+        :bottom 3px
+        :left 3px !important
+    .comments-container
+        :display none
+        
+.buyer-bottom
+    :position fixed
+    :bottom 5px
+    :right 5px
+
+.approved-jewel
+    :background url("/images/bg_drop_here.png") no-repeat center 0
+
