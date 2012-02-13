@@ -24,7 +24,12 @@ function sentToBuyerBtnClick(btn, user_id){
 
   $.post( 'send_to_buyer/' + user_id )
   .complete(function() {
-    alert("Jewels have been sent");
+    //alert("Jewels have been sent");
+    $.achtung({ 
+        message: 'The Collection list has been sent to a Buyer'
+      , timeout:5
+      , className: 'notification-msg'
+    });
   });
 
 }
@@ -51,7 +56,12 @@ function submit_by_buyer(btn, user_id){
 
   $.post( url, params )
   .complete(function() {
-    alert("Jewels are submitted");
+    //alert("The list of Accepted items has been sent to Account manager");
+    $.achtung({
+        message: 'The list of Accepted items has been sent to Account manager'
+      , timeout:5
+      , className: 'notification-msg'
+    });
   });
 }
 
