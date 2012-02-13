@@ -151,4 +151,39 @@ $(function() {
         var comments = $(list).find('.comment');
         $(comments).last().show();
     });
+
+
+
+    var source = "demo.html";
+    var width = 920;
+    var align = "center";
+    var top = 30;
+    var padding = 10;
+    var backgroundColor = "#FFFFFF";
+    var borderColor = "#000000";
+    var borderWeight = 4;
+    var borderRadius = 5;
+    var fadeOutTime = 300;
+    var disableColor = "#666666";
+    var disableOpacity = 40;
+    var loadingImage = "relative_path_to_file/loading.gif";
+ 
+    //This method initialises the modal popup
+    $(".details-popup").click(function() {
+ 
+        modalPopup( align,
+        top,
+        width,
+        padding,
+        disableColor,
+        disableOpacity,
+        backgroundColor,
+        borderColor,
+        borderWeight,
+        borderRadius,
+        fadeOutTime,
+        source,
+        loadingImage );
+ 
+    }); 
 });
